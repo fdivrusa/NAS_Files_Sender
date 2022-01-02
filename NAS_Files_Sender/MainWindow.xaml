@@ -10,21 +10,16 @@
         Title="NAS_Files_Sender" Height="450" Width="800"
         ResizeMode="NoResize">
     <Grid>
-        <Grid HorizontalAlignment="Center" Height="66" Margin="0,10,0,0" VerticalAlignment="Top" Width="780">
+        <Grid HorizontalAlignment="Center" Height="76" VerticalAlignment="Top" Width="800" Background="#FF68AAE4">
             <Label Content="NAS Files Sender" HorizontalAlignment="Left" Width="164" FontSize="20" Margin="308,0,0,33"/>
             <Label Content="Use this tool to easily send folders content to a destination folder" HorizontalAlignment="Left" Margin="212,38,0,0" VerticalAlignment="Top" Height="28" Grid.ColumnSpan="2"/>
         </Grid>
         <Grid HorizontalAlignment="Center" Height="358" Margin="0,76,0,0" VerticalAlignment="Top" Width="790">
-            <Grid HorizontalAlignment="Left" Height="348" Margin="10,0,0,0" VerticalAlignment="Top" Width="385">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="55*"/>
-                    <RowDefinition Height="61*"/>
-                </Grid.RowDefinitions>
-                <Button x:Name="Btn_Select_DestinationFolder" Content="Select the destination folder" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Height="40" Width="322" FontSize="14" Click="Btn_Select_DestinationFolder_Click"/>
-                <Label Content="Destination folder : " HorizontalAlignment="Left" Margin="26,0,0,0" VerticalAlignment="Center"/>
-                <Label x:Name="Lbl_DestinationFolder" Content="{Binding DestinationFolder}" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Center"/>
+            <Grid HorizontalAlignment="Left" Height="348" VerticalAlignment="Top" Width="800" Margin="-10,0,0,0">
+                <Button x:Name="Btn_Select_DestinationFolder" Content="Select the destination folder" HorizontalAlignment="Left" Margin="11,6,0,0" VerticalAlignment="Top" Height="30" Width="189" FontSize="14" Click="Btn_Select_DestinationFolder_Click"/>
+                <Label Content="Destination folder : " HorizontalAlignment="Left" Margin="11,41,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="Lbl_DestinationFolder" Content="{Binding DestinationFolder}" HorizontalAlignment="Left" Margin="125,41,0,0" VerticalAlignment="Top" Height="26" Width="650"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="348" Margin="395,0,0,0" VerticalAlignment="Top" Width="385"/>
         </Grid>
     </Grid>
 </Window>

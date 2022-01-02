@@ -23,11 +23,5 @@ namespace NAS_Files_Sender.ViewModels
                 }
             }
         }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        private void NotifyPropertyChanged(string propertyName)
-        {
-
-        }
     }
 }
