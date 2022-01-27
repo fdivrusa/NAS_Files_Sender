@@ -16,9 +16,22 @@
         </Grid>
         <Grid HorizontalAlignment="Center" Height="358" Margin="0,76,0,0" VerticalAlignment="Top" Width="790">
             <Grid HorizontalAlignment="Left" Height="348" VerticalAlignment="Top" Width="800" Margin="-10,0,0,0">
-                <Button x:Name="Btn_Select_DestinationFolder" Content="Select the destination folder" HorizontalAlignment="Left" Margin="11,6,0,0" VerticalAlignment="Top" Height="30" Width="189" FontSize="14" Click="Btn_Select_DestinationFolder_Click"/>
-                <Label Content="Destination folder : " HorizontalAlignment="Left" Margin="11,41,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="Btn_Select_DestinationFolder" Content="Select the destination folder" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="30" Width="189" FontSize="14" Click="Btn_Select_DestinationFolder_Click"/>
+                <Label Content="Destination folder : " HorizontalAlignment="Left" Margin="20,41,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="Lbl_DestinationFolder" Content="{Binding DestinationFolder}" HorizontalAlignment="Left" Margin="125,41,0,0" VerticalAlignment="Top" Height="26" Width="650"/>
+                <Grid Margin="11,72,0,0">
+                    <ListView ItemsSource="{Binding SourceFolders}" Margin="0,0,0,50" Name="lvSourceFolders">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="auto" Header="Folder name" DisplayMemberBinding="{Binding FileInfo.DirectoryName}"/>
+                                <GridViewColumn Width="auto" Header="Path" DisplayMemberBinding="{Binding FileInfo.FullName}"/>
+                                <GridViewColumn Width="auto" Header="Size" DisplayMemberBinding="{Binding FileInfo.Length}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="Btn_Add_SourceFolder" Content="Add source folder" HorizontalAlignment="Center" Margin="0,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.177,-1.247" Height="26" Width="168" Click="Btn_Add_SourceFolder_Click"/>
+                </Grid>
+
             </Grid>
         </Grid>
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using NAS_Files_Sender.Models;
+using System.Collections.ObjectModel;
 
 namespace NAS_Files_Sender.ViewModels
 {
@@ -16,12 +17,14 @@ namespace NAS_Files_Sender.ViewModels
             get { return _destinationFolder; }
             set
             {
-                if(_destinationFolder != value)
+                if (_destinationFolder != value)
                 {
                     _destinationFolder = value;
                     NotifyPropertyChanged(nameof(DestinationFolder));
                 }
             }
         }
+
+        public ObservableCollection<SourceFolder> SourceFolders { get; } = new ObservableCollection<SourceFolder>();
     }
 }
