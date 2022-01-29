@@ -1,4 +1,5 @@
-﻿using NAS_Files_Sender.ViewModels;
+﻿using NAS_Files_Sender.Models;
+using NAS_Files_Sender.ViewModels;
 using System;
 using System.IO;
 using System.Windows;
@@ -40,11 +41,15 @@ namespace NAS_Files_Sender
             {
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
                 ShowNewFolderButton = true,
+
             };
             var result = dialog.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                mainViewModel.SourceFolders.Add(new FileInfo(dialog.SelectedPath));
+                mainViewModel.SourceFolders.Add(new SourceFolder()
+                {
+                    DirectoryInfo = new DirectoryInfo(dialog.SelectedPath)
+                });
             }
         }
     }
